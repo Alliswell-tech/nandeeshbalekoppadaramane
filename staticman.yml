@@ -1,0 +1,11 @@
+comments:
+  allowedFields: ["name", "email", "message"]
+  branch: "master" # or "main" – check your repo's default branch
+  commitMessage: "New comment by {fields.name}"
+  path: "data/comments/{options.slug}" # stores comments in /data/comments/
+  filename: "{slug}-{date}"
+  format: "json"
+  moderation: true # change to false if you don’t want approval
+  requiredFields: ["name", "message"]
+  transforms:
+    email: md5 # keeps emails private
