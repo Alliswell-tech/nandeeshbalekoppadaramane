@@ -1,6 +1,6 @@
 comments:
   allowedFields: ["name", "email", "message"]
-  branch: "master" # or "main" – check your repo's default branch
+  branch: "main" # Ensure this matches your default branch
   commitMessage: "New comment by {fields.name}"
   path: "data/comments/{options.slug}" # stores comments in /data/comments/
   filename: "{slug}-{date}"
