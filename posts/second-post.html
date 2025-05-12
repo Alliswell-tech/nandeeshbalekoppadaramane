@@ -186,25 +186,30 @@
 <!-- Staticman Comment Form -->
 <div id="comments" class="mt-12">
   <h3 class="text-xl font-bold mb-4">Leave a Comment</h3>
-  <form id="comment-form" method="POST" action="https://api.staticman.net/v3/entry/alliswell-tech/nandeeshbalekoppadaramane/master/comments ">
-    <input type="hidden" name="options[redirect]" value="{{ site.url }}{{ page.url }}" />
-    <input type="hidden" name="options[slug]" value="{{ page.slug }}" />
+  <form id="comment-form" method="POST" action="https://api.staticman.net/v3/entry/alliswell-tech/nandeeshbalekoppadaramane/main/comments ">
+    <!-- Hidden Fields -->
+    <input type="hidden" name="options[redirect]" value="https://alliswell-tech.github.io/nandeeshbalekoppadaramane/second-post.html " />
+    <input type="hidden" name="options[slug]" value="your-post-slug-or-title" />
 
+    <!-- Name Field -->
     <div class="mb-4">
       <label for="name" class="block mb-2">Name:</label>
       <input type="text" name="fields[name]" id="name" required placeholder="Your Name" class="w-full border p-2 rounded">
     </div>
 
+    <!-- Email Field (Optional) -->
     <div class="mb-4">
       <label for="email" class="block mb-2">Email (Optional):</label>
       <input type="email" name="fields[email]" id="email" placeholder="your@email.com" class="w-full border p-2 rounded">
     </div>
 
+    <!-- Message Field -->
     <div class="mb-4">
       <label for="message" class="block mb-2">Comment:</label>
       <textarea name="fields[message]" id="message" rows="5" required placeholder="Your comment here..." class="w-full border p-2 rounded"></textarea>
     </div>
 
+    <!-- Submit Button -->
     <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">Submit Comment</button>
   </form>
 </div>
@@ -223,7 +228,7 @@
   const staticman = new Staticman({
     endpoint: 'https://api.staticman.net/v3 ',
     repository: 'alliswell-tech/nandeeshbalekoppadaramane',
-    branch: 'master',
+    branch: 'main',
     path: 'data/comments/{{ slug }}'
   });
 
